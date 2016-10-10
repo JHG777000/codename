@@ -136,6 +136,26 @@ codename_pixelcolor cn_GetPoint(codename_scene pointscene, int x, int y) {
     return codename_NewColorObject(0, 0, 0) ;
 }
 
+void cn_GetRBG(codename_scene pointscene, int x, int y, cn_RGBcolor* red, cn_RGBcolor* blue, cn_RGBcolor* green) {
+    
+    int fin_x = x ; //Get points from screen cords, not real cords
+    
+    int fin_y = y ;
+    
+    if ( ((fin_x >= 0) && (fin_y >= 0)) && ((fin_x < pointscene->pixelscene->x) && (fin_y < pointscene->pixelscene->y))) {
+        JHGPixels_GetPixel(pointscene->pixelscene, fin_x, fin_y, red, blue, green) ;
+        
+        return ;
+    }
+
+    *red = 0 ;
+    
+    *blue = 0 ;
+    
+    *green = 0 ;
+    
+}
+
 void cn_SetArcPoint(codename_scene pointscene, int x, int y, int a, int b, int r, double alpha, double beta, cn_RGBcolor red, cn_RGBcolor blue, cn_RGBcolor green) {
     
     JHGPixelcolor_Object pixcolor ;

@@ -53,6 +53,7 @@ void cnpixel_SetColor(codename_scene pointscene, int x, int y, codename_pixelcol
 void cn_SetPoint(codename_scene pointscene, int x, int y, cn_RGBcolor red, cn_RGBcolor blue, cn_RGBcolor green) ;
 void cnpoint_SetColor_and_free(codename_scene pointscene, int x, int y, codename_pixelcolor pixcolor) ;
 codename_pixelcolor cn_GetPoint(codename_scene pointscene, int x, int y) ;
+void cn_GetRBG(codename_scene pointscene, int x, int y, cn_RGBcolor* red, cn_RGBcolor* blue, cn_RGBcolor* green) ;
 void cn_SetArcPoint(codename_scene pointscene, int x, int y, int a, int b, int r, double alpha, double beta, cn_RGBcolor red, cn_RGBcolor blue, cn_RGBcolor green) ;
 
 //shapes
